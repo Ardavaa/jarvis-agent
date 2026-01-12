@@ -5,31 +5,31 @@ echo ========================================
 echo.
 
 echo Starting MCP Memory DB Server (Port 8001)...
-start "MCP Memory DB" cmd /k "cd mcp-servers\mcp-memory-db && uv run python server.py"
+start "MCP Memory DB" cmd /k "set PYTHONPATH=%cd% && cd mcp_servers\mcp-memory-db && uv run python server.py"
 timeout /t 2 /nobreak >nul
 
 echo Starting MCP Vector DB Server (Port 8002)...
-start "MCP Vector DB" cmd /k "cd mcp-servers\mcp-vector-db && uv run python server.py"
+start "MCP Vector DB" cmd /k "set PYTHONPATH=%cd% && cd mcp_servers\mcp-vector-db && uv run python server.py"
 timeout /t 2 /nobreak >nul
 
 echo Starting MCP Telegram Server (Port 8003)...
-start "MCP Telegram" cmd /k "cd mcp-servers\mcp-telegram && uv run python server.py"
+start "MCP Telegram" cmd /k "set PYTHONPATH=%cd% && cd mcp_servers\mcp-telegram && uv run python server.py"
 timeout /t 2 /nobreak >nul
 
 echo Starting MCP Google Calendar Server (Port 8004)...
-start "MCP Calendar" cmd /k "cd mcp-servers\mcp-calendar-google && uv run python server.py"
+start "MCP Calendar" cmd /k "set PYTHONPATH=%cd% && cd mcp_servers\mcp-calendar-google && uv run python server.py"
 timeout /t 2 /nobreak >nul
 
 echo Starting MCP Gmail Server (Port 8005)...
-start "MCP Gmail" cmd /k "cd mcp-servers\mcp-gmail && uv run python server.py"
+start "MCP Gmail" cmd /k "set PYTHONPATH=%cd% && cd mcp_servers\mcp-gmail && uv run python server.py"
 timeout /t 2 /nobreak >nul
 
 echo Starting MCP Windows OS Server (Port 8006)...
-start "MCP Windows OS" cmd /k "cd mcp-servers\mcp-windows-os && uv run python server.py"
+start "MCP Windows OS" cmd /k "set PYTHONPATH=%cd% && cd mcp_servers\mcp-windows-os && uv run python server.py"
 timeout /t 2 /nobreak >nul
 
 echo Starting MCP Voice Server (Port 8007)...
-start "MCP Voice" cmd /k "cd mcp-servers\mcp-voice && uv run python server.py"
+start "MCP Voice" cmd /k "set PYTHONPATH=%cd% && cd mcp_servers\mcp-voice && uv run python server.py"
 timeout /t 2 /nobreak >nul
 
 echo.

@@ -7,3 +7,4 @@ soundfile>=0.12.1
 ffmpeg-python>=0.2.0
 # TTS is optional - install separately if needed:
 # pip install TTS
+websockets<14.0
