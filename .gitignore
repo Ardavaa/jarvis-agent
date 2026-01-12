@@ -250,3 +250,5 @@ backend/temp/
 # Test files
 test_*.py
 *_test.py
+
+/credentials
