@@ -20,7 +20,8 @@ class Planner:
         self,
         user_message: str,
         context: Optional[List[Dict[str, str]]] = None,
-        observations: Optional[List[str]] = None
+        observations: Optional[List[str]] = None,
+        semantic_context: Optional[str] = None
     ) -> Dict[str, Any]:
         """
         Create an execution plan for the user's request
@@ -29,6 +30,7 @@ class Planner:
             user_message: User's input
             context: Conversation history
             observations: Previous observations from tool executions
+            semantic_context: Optional relevant context from semantic memory (RAG)
             
         Returns:
             Dict containing plan, tool calls, and completion status
@@ -49,12 +51,17 @@ class Planner:
                 for i, obs in enumerate(observations)
             ])
         
+        # Build semantic context string
+        semantic_str = ""
+        if semantic_context:
+            semantic_str = f"\n\nRelevant Context from Memory:\n{semantic_context}"
+        
         # Format user prompt
         user_prompt = PLANNER_USER_TEMPLATE.format(
             user_message=user_message,
             context=context_str if context_str else "No previous context",
             observations=observations_str if observations_str else "No previous observations"
-        )
+        ) + semantic_str
         
         # Get plan from LLM
         response = await self.llm.generate(
