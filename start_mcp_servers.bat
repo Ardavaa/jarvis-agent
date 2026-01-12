@@ -28,6 +28,10 @@ echo Starting MCP Windows OS Server (Port 8006)...
 start "MCP Windows OS" cmd /k "cd mcp-servers\mcp-windows-os && uv run python server.py"
 timeout /t 2 /nobreak >nul
 
+echo Starting MCP Voice Server (Port 8007)...
+start "MCP Voice" cmd /k "cd mcp-servers\mcp-voice && uv run python server.py"
+timeout /t 2 /nobreak >nul
+
 echo.
 echo ========================================
 echo All MCP Servers Started!
@@ -38,6 +42,7 @@ echo Telegram:     http://localhost:8003
 echo Calendar:     http://localhost:8004
 echo Gmail:        http://localhost:8005
 echo Windows OS:   http://localhost:8006
+echo Voice:        http://localhost:8007
 echo ========================================
 echo.
 echo Press any key to exit...
