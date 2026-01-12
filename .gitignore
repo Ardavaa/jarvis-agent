@@ -205,3 +205,48 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ============================================
+# JARVIS Specific
+# ============================================
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+jarvis.db
+backend/jarvis.db
+
+# ChromaDB vector database
+chroma_db/
+backend/chroma_db/
+
+# Google API credentials
+credentials/
+*.json
+!pyproject.toml
+!package.json
+!backend/.env.example
+
+# Audio files and cache
+*.wav
+*.mp3
+*.ogg
+*.flac
+audio_cache/
+backend/audio_cache/
+
+# Logs
+logs/
+backend/logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+backend/tmp/
+backend/temp/
+
+# Test files
+test_*.py
+*_test.py
